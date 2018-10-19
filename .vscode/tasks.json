@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Bygg Lindormsknekt",
+            "type": "shell",
+            "command": "g++.exe",
+            "args": [
+                "Lindormsknekt.cpp",
+                "-o",
+                "Lindormsknekt.exe"
+            ],
+            "group": {
+                "isDefault": true,
+                "kind": "build"
+            }
+        }
+    ]
+}
