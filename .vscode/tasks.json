@@ -39,6 +39,7 @@
             ],
             "dependsOn": [
                 "Clean",
+                "make bin",
                 "Bygg Lindormsknekt (debug)",
                 "DLL-Hell"
             ]
@@ -55,10 +56,14 @@
         {
             "label": "Clean",
             "type": "shell",
-            "command": "rm",
+            "command": "Get-ChildItem -Filter bin | Remove-Item -Recurse"
+        },
+        {
+            "label": "make bin",
+            "type": "shell",
+            "command": "mkdir",
             "args": [
-                "bin",
-                "-r",
+                "bin"
             ]
         }
     ]
