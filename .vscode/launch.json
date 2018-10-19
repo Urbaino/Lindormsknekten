@@ -20,7 +20,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Bygg Lindormsknekt"
+            "preLaunchTask": "Länka Lindormsknekt (debug)"
         }
     ]
 }

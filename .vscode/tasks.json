@@ -23,8 +23,10 @@
             "args": [
                 "Lindormsknekt.o",
                 "-o", "Lindormsknekt.exe",
-                "-L", "lib\\SFML_2.5.1\\lib", "-lsfml-graphics-d", "-lsfml-window-d", "-lsfml-system"
-            ]
+                "-L", "lib\\SFML-2.5.1\\lib", 
+                "-l", "sfml-graphics-d", "-l", "sfml-window-d", "-l", "sfml-system"
+            ],
+            "dependsOn" : "Bygg Lindormsknekt (debug)"
         }
     ]
 }
