@@ -3,9 +3,10 @@
     "tasks": [
         {
             "label": "Bygg Lindormsknekt",
-            "type": "shell",
+            "type": "shell", 
             "command": "g++.exe",
             "args": [
+                "-g",
                 "Lindormsknekt.cpp",
                 "-o",
                 "Lindormsknekt.exe"
