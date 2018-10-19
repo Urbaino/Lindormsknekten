@@ -9,7 +9,9 @@
                 "-g",
                 "Lindormsknekt.cpp",
                 "-o",
-                "Lindormsknekt.exe"
+                "Lindormsknekt.exe",
+                "-I", 
+                "lib\\SFML-2.5.1\\include"
             ],
             "group": {
                 "isDefault": true,
