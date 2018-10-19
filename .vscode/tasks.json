@@ -8,7 +8,7 @@
             "args": [
                 "-g",
                 "-c", "Lindormsknekt.cpp",
-                "-o", "Lindormsknekt.o",
+                "-o", ".\\bin\\Lindormsknekt.o",
                 "-I", "lib\\SFML-2.5.1\\include"
             ],
             "group": {
@@ -21,12 +21,22 @@
             "type": "shell", 
             "command": "g++",
             "args": [
-                "Lindormsknekt.o",
-                "-o", "Lindormsknekt.exe",
+                "-g",
+                "bin\\Lindormsknekt.o",
+                "-o", "bin\\Lindormsknekt.exe",
                 "-L", "lib\\SFML-2.5.1\\lib", 
-                "-l", "sfml-graphics-d", "-l", "sfml-window-d", "-l", "sfml-system"
+                "-l", "sfml-graphics-d", "-l", "sfml-window-d", "-l", "sfml-system-d"
             ],
-            "dependsOn" : "Bygg Lindormsknekt (debug)"
+            "dependsOn" : ["Bygg Lindormsknekt (debug)", "DLL-Hell"]
+        },
+        {
+            "label": "DLL-Hell",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "lib\\SFML-2.5.1\\bin\\*",
+                "bin\\.",
+            ]
         }
     ]
 }
