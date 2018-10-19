@@ -3,13 +3,16 @@
     "tasks": [
         {
             "label": "Bygg Lindormsknekt (debug)",
-            "type": "shell", 
+            "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
-                "-c", "Lindormsknekt.cpp",
-                "-o", ".\\bin\\Lindormsknekt.o",
-                "-I", "lib\\SFML-2.5.1\\include"
+                "-c",
+                "Lindormsknekt.cpp",
+                "-o",
+                ".\\bin\\Lindormsknekt.o",
+                "-I",
+                "lib\\SFML-2.5.1\\include"
             ],
             "group": {
                 "isDefault": true,
@@ -18,16 +21,27 @@
         },
         {
             "label": "Länka Lindormsknekt (debug)",
-            "type": "shell", 
+            "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
                 "bin\\Lindormsknekt.o",
-                "-o", "bin\\Lindormsknekt.exe",
-                "-L", "lib\\SFML-2.5.1\\lib", 
-                "-l", "sfml-graphics-d", "-l", "sfml-window-d", "-l", "sfml-system-d"
+                "-o",
+                "bin\\Lindormsknekt.exe",
+                "-L",
+                "lib\\SFML-2.5.1\\lib",
+                "-l",
+                "sfml-graphics-d",
+                "-l",
+                "sfml-window-d",
+                "-l",
+                "sfml-system-d"
             ],
-            "dependsOn" : ["Bygg Lindormsknekt (debug)", "DLL-Hell"]
+            "dependsOn": [
+                "Clean",
+                "Bygg Lindormsknekt (debug)",
+                "DLL-Hell"
+            ]
         },
         {
             "label": "DLL-Hell",
@@ -35,7 +49,16 @@
             "command": "cp",
             "args": [
                 "lib\\SFML-2.5.1\\bin\\*",
-                "bin\\.",
+                "bin\\."
+            ]
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "bin",
+                "-r",
             ]
         }
     ]
