@@ -2,21 +2,29 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Bygg Lindormsknekt",
+            "label": "Bygg Lindormsknekt (debug)",
             "type": "shell", 
             "command": "g++",
             "args": [
                 "-g",
-                "Lindormsknekt.cpp",
-                "-o",
-                "Lindormsknekt.exe",
-                "-I", 
-                "lib\\SFML-2.5.1\\include"
+                "-c", "Lindormsknekt.cpp",
+                "-o", "Lindormsknekt.o",
+                "-I", "lib\\SFML-2.5.1\\include"
             ],
             "group": {
                 "isDefault": true,
                 "kind": "build"
             }
+        },
+        {
+            "label": "Länka Lindormsknekt (debug)",
+            "type": "shell", 
+            "command": "g++",
+            "args": [
+                "Lindormsknekt.o",
+                "-o", "Lindormsknekt.exe",
+                "-L", "lib\\SFML_2.5.1\\lib", "-lsfml-graphics-d", "-lsfml-window-d", "-lsfml-system"
+            ]
         }
     ]
 }
